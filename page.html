@@ -14,7 +14,7 @@
         .header {
             background-color: #fff;
             padding: 20px;
-            text-align: left;
+            text-align: center;
             border-bottom: 1px solid #ddd;
         }
         .header img {
@@ -22,6 +22,7 @@
         }
         .nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             padding: 10px 0;
             background-color: #fff;
@@ -38,7 +39,7 @@
         }
         .main {
             text-align: center;
-            padding: 50px 0;
+            padding: 50px 20px;
         }
         .main h1 {
             font-size: 2em;
@@ -64,19 +65,20 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             margin: 10px 0;
-            width: 80%;
+            width: 90%;
             max-width: 600px;
             display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
         .card img {
-            width: 45%;
+            width: 100%;
             height: auto;
         }
         .card-content {
             padding: 20px;
             text-align: left;
-            flex-grow: 1;
+            width: 100%;
         }
         .card-content h2 {
             color: #e51c23;
@@ -90,6 +92,18 @@
             text-decoration: none;
             color: #e51c23;
             font-weight: bold;
+        }
+        @media (min-width: 600px) {
+            .card {
+                flex-direction: row;
+            }
+            .card img {
+                width: 45%;
+                height: auto;
+            }
+            .card-content {
+                width: 55%;
+            }
         }
     </style>
 </head>
