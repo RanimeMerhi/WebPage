@@ -162,32 +162,33 @@
             </div>
         </div>
     </div>
-   <script>
-        document.getElementById('explore-button').addEventListener('click', function() {
+<script>
+    document.getElementById('explore-button').addEventListener('click', function() {
+        setTimeout(function() {
+            window.open('https://www.dubizzle.com.lb/', '_blank');
+        }, 100);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('card').addEventListener('click', function() {
             setTimeout(function() {
-                window.location.href = 'https://www.dubizzle.com.lb/';
+                window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
             }, 100);
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('card').addEventListener('click', function() {
-                setTimeout(function() {
-                    window.location.href = 'https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html';
-                }, 100);
-            });
-
-            document.getElementById('card1').addEventListener('click', function() {
-                setTimeout(function() {
-                    window.location.href = 'https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html';
-                }, 100);
-            });
-
-            document.getElementById('card2').addEventListener('click', function() {
-                setTimeout(function() {
-                    window.location.href = 'https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html';
-                }, 100);
-            });
+        document.getElementById('card1').addEventListener('click', function() {
+            setTimeout(function() {
+                window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
+            }, 100);
         });
-    </script>
+
+        document.getElementById('card2').addEventListener('click', function() {
+            setTimeout(function() {
+                window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
+            }, 100);
+        });
+    });
+</script>
+
 </body>
 </html>
