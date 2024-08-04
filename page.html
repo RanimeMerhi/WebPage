@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Car Selections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
@@ -33,6 +34,7 @@
             color: #000;
             padding: 8px 16px;
             border-radius: 4px;
+            transition: background-color 0.3s;
         }
         .nav a:hover {
             background-color: #ddd;
@@ -42,7 +44,7 @@
             padding: 50px 20px;
         }
         .main h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
         .main button {
@@ -53,23 +55,30 @@
             font-size: 1em;
             cursor: pointer;
             border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .main button:hover {
+            background-color: #c21820;
         }
         .card-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             margin: 20px 0;
+            gap: 20px;
         }
         .card {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
-            margin: 10px 0;
             width: 90%;
             max-width: 600px;
-            display: flex;
-            flex-direction: column;
             overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
         }
         .card img {
             width: 100%;
@@ -78,7 +87,6 @@
         .card-content {
             padding: 20px;
             text-align: left;
-            width: 100%;
         }
         .card-content h2 {
             color: #e51c23;
@@ -92,6 +100,10 @@
             text-decoration: none;
             color: #e51c23;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        .card-content a:hover {
+            color: #c21820;
         }
         @media (min-width: 600px) {
             .card {
@@ -99,7 +111,6 @@
             }
             .card img {
                 width: 45%;
-                height: auto;
             }
             .card-content {
                 width: 55%;
@@ -125,7 +136,7 @@
         <button id="explore-button">Explore Now</button>
     </div>
     <div class="card-container">
-        <div id="card" class="card">
+        <div class="card">
             <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
             <div class="card-content">
                 <h2>USD 31,800</h2>
@@ -137,7 +148,7 @@
                 <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
             </div>
         </div>
-        <div id="card1" class="card">
+        <div class="card">
             <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
             <div class="card-content">
                 <h2>USD 31,800</h2>
@@ -149,7 +160,7 @@
                 <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
             </div>
         </div>
-        <div id="card2" class="card">
+        <div class="card">
             <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
             <div class="card-content">
                 <h2>USD 31,800</h2>
@@ -169,26 +180,13 @@
         }, 100);
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('card').addEventListener('click', function() {
-            setTimeout(function() {
-                window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
-            }, 100);
-        });
-
-        document.getElementById('card1').addEventListener('click', function() {
-            setTimeout(function() {
-                window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
-            }, 100);
-        });
-
-        document.getElementById('card2').addEventListener('click', function() {
+    document.querySelectorAll('.card').forEach(function(card) {
+        card.addEventListener('click', function() {
             setTimeout(function() {
                 window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
             }, 100);
         });
     });
 </script>
-
 </body>
 </html>
