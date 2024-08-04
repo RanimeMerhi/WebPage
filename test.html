@@ -65,10 +65,9 @@
         .swiper-container {
             width: 100%;
             max-width: 1000px; /* Set a fixed maximum width for desktop */
-            margin: 0 auto; /* Center the container */
-            padding-top: 20px;
-            padding-bottom: 20px;
-            box-sizing: border-box;
+            margin: 30px auto 0; /* Move slider down by 30px and center it */
+            padding-bottom: 60px; /* Space for navigation buttons */
+            position: relative; /* Make this the reference for absolute positioning */
         }
         .swiper-slide {
             background-color: #fff;
@@ -117,6 +116,17 @@
         .swiper-button-next,
         .swiper-button-prev {
             color: #e51c23;
+            position: absolute;
+            bottom: 20px; /* Move buttons down */
+            width: 27px;
+            height: 44px;
+            transition: background-color 0.3s;
+        }
+        .swiper-button-next {
+            right: 10px;
+        }
+        .swiper-button-prev {
+            left: 10px;
         }
         .modal {
             display: none;
