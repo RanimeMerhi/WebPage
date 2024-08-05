@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Top Car Selections</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .header {
             background-color: #fff;
@@ -62,36 +60,33 @@
         .main button:hover {
             background-color: #c21820;
         }
-        .swiper-container {
-            width: 100%;
-            max-width: 1000px; /* Set a fixed maximum width for desktop */
-            margin: 30px auto 0; /* Move slider down by 30px and center it */
-            padding-bottom: 60px; /* Space for navigation buttons */
-            position: relative; /* Make this the reference for absolute positioning */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20px;
         }
-        .swiper-slide {
+        .card {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
+            width: 90%;
+            max-width: 600px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            transition: transform 0.3s;
         }
-        .swiper-slide:hover {
+        .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        .swiper-slide img {
+        .card img {
             width: 100%;
             height: auto;
         }
         .card-content {
             padding: 20px;
             text-align: left;
-            width: 100%;
         }
         .card-content h2 {
             color: #e51c23;
@@ -110,23 +105,16 @@
         .card-content a:hover {
             color: #c21820;
         }
-        .swiper-pagination-bullet {
-            background: #e51c23;
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #e51c23;
-            position: absolute;
-            bottom: 20px; /* Move buttons down */
-            width: 27px;
-            height: 44px;
-            transition: background-color 0.3s;
-        }
-        .swiper-button-next {
-            right: 10px;
-        }
-        .swiper-button-prev {
-            left: 10px;
+        @media (min-width: 600px) {
+            .card {
+                flex-direction: row;
+            }
+            .card img {
+                width: 45%;
+            }
+            .card-content {
+                width: 55%;
+            }
         }
     </style>
 </head>
@@ -147,94 +135,58 @@
         <h1>Top Car Selections: Find Your Perfect Match</h1>
         <button id="explore-button">Explore Now</button>
     </div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" data-car="Car1">
-                <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
-                <div class="card-content">
-                    <h2>USD 31,800</h2>
-                    <p>2019 Mercedes-Benz A220 AMG Kit</p>
-                    <p>Reference number: 13104</p>
-                    <p>2019</p>
-                    <p>Mercedes-Benz A220 AMG Kit</p>
-                    <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
-                    <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html#car1">VIEW MORE</a>
-                </div>
-            </div>
-            <div class="swiper-slide" data-car="Car2">
-                <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
-                <div class="card-content">
-                    <h2>USD 31,800</h2>
-                    <p>2019 Mercedes-Benz A220 AMG Kit</p>
-                    <p>Reference number: 13104</p>
-                    <p>2019</p>
-                    <p>Mercedes-Benz A220 AMG Kit</p>
-                    <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
-                    <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
-                </div>
-            </div>
-            <div class="swiper-slide" data-car="Car3">
-                <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
-                <div class="card-content">
-                    <h2>USD 31,800</h2>
-                    <p>2019 Mercedes-Benz A220 AMG Kit</p>
-                    <p>Reference number: 13104</p>
-                    <p>2019</p>
-                    <p>Mercedes-Benz A220 AMG Kit</p>
-                    <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
-                    <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
-                </div>
-            </div>
-            <div class="swiper-slide" data-car="Car4">
-                <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
-                <div class="card-content">
-                    <h2>USD 31,800</h2>
-                    <p>2019 Mercedes-Benz A220 AMG Kit</p>
-                    <p>Reference number: 13104</p>
-                    <p>2019</p>
-                    <p>Mercedes-Benz A220 AMG Kit</p>
-                    <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
-                    <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
-                </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
+            <div class="card-content">
+                <h2>USD 31,800</h2>
+                <p>2019 Mercedes-Benz A220 AMG Kit</p>
+                <p>Reference number: 13104</p>
+                <p>2019</p>
+                <p>Mercedes-Benz A220 AMG Kit</p>
+                <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
+                <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
             </div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="card">
+            <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
+            <div class="card-content">
+                <h2>USD 31,800</h2>
+                <p>2019 Mercedes-Benz A220 AMG Kit</p>
+                <p>Reference number: 13104</p>
+                <p>2019</p>
+                <p>Mercedes-Benz A220 AMG Kit</p>
+                <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
+                <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.dubizzle.com.lb/thumbnails/12123002-800x600.webp" alt="2019 Mercedes-Benz A220 AMG Kit">
+            <div class="card-content">
+                <h2>USD 31,800</h2>
+                <p>2019 Mercedes-Benz A220 AMG Kit</p>
+                <p>Reference number: 13104</p>
+                <p>2019</p>
+                <p>Mercedes-Benz A220 AMG Kit</p>
+                <p>2.0L - 4-Cylinder Turbocharged - 188 HP</p>
+                <a href="https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html">VIEW MORE</a>
+            </div>
+        </div>
     </div>
+<script>
+    document.getElementById('explore-button').addEventListener('click', function() {
+        setTimeout(function() {
+            window.open('https://www.dubizzle.com.lb/', '_blank');
+        }, 100);
+    });
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            spaceBetween: 10,
-            slidesPerView: 1,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-
-        document.getElementById('explore-button').addEventListener('click', function() {
+    document.querySelectorAll('.card').forEach(function(card) {
+        card.addEventListener('click', function() {
             setTimeout(function() {
-                window.open('https://www.dubizzle.com.lb/', '_blank');
+                window.open('https://www.dubizzle.com.lb/ad/2014-mercedes-benz-e350-coupe-4matic-ID115990175.html', '_blank');
             }, 100);
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.swiper-slide').forEach(function(slide) {
-                slide.addEventListener('click', function() {
-                    setTimeout(function() {
-                        window.location.href = slide.querySelector('.card-content a').href;
-                    }, 100);
-                });
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
